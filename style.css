@@ -1,0 +1,102 @@
+/* Color palette */
+:root {
+    --granite: #3F4B3B;
+    --hunter-green: #44633F;
+    --sea-green: #5A9367;
+    --mint-leaf: #5CAB7D;
+    --card: #f4f8f3;       /* soft off-white so text is easy to read */
+    --text-dark: #2b3328;
+}
+
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--granite), var(--hunter-green));
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.7;
+    padding: 50px 16px;
+    min-height: 100vh;
+}
+
+/* Centered card */
+.mainContainer {
+    max-width: 780px;
+    margin: 0 auto;
+    background-color: var(--card);
+    padding: 40px;
+    border-radius: 12px;
+    border-top: 6px solid var(--mint-leaf);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    color: var(--granite);
+    margin-bottom: 35px;
+}
+
+/* Short green bar under the title */
+h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--sea-green);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+h2 {
+    font-size: 22px;
+    color: var(--hunter-green);
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 5px solid var(--sea-green);
+}
+
+/* Sections */
+.aboutme,
+.accomplishments {
+    margin-bottom: 30px;
+}
+
+#tagOne {
+    font-size: 17px;
+}
+
+/* Accomplishments list */
+.accomplishments ul {
+    list-style: none;
+}
+
+.accomplishments li {
+    background-color: #ffffff;
+    border-left: 4px solid var(--mint-leaf);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+/* Alternate the accent color on every other item */
+.accomplishments li:nth-child(even) {
+    border-left-color: var(--hunter-green);
+}
+
+/* Smaller screens (phones) */
+@media (max-width: 600px) {
+    .mainContainer {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
